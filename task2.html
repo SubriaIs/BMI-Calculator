@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1> (BMI) calculator </h1>
+    <label for="mass">Mass (kg):</label>
+    <input id="mass" type="number" min="1" max="600">
+
+    <label for="height">Height (cm):</label>
+    <input id="height" type="number" min="1" max="600">
+
+    <button id="btn" onclick="calculateBMI()">Calculate BMI</button>
+
+    <label id="result"></label>
+   
+
+    <style>
+        h1{
+            font-size: 30px;
+            text-align: center;
+        }   
+        body{
+           background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
+        }
+
+       input,label ,button{ display: inline; }
+    
+       input{
+            width: 150px;
+            }
+    </style>
+    <script>
+        function calculateBMI() {
+        let mass = parseInt(document
+            .querySelector("#mass").value);
+        let height = parseInt(document
+            .querySelector("#height").value);
+        
+        let h= height/100;
+        
+        let height_sq = (h * h)
+        let bmi = (mass / height_sq).toFixed(2);
+        document.querySelector("#result").innerHTML = "BMI = "+bmi+" kg/m²";
+    }
+    </script>
+ 
+</body>
+</html>
